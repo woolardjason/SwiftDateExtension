@@ -71,7 +71,7 @@ extension NSDate {
         dc.weekOfYear = wks
         dc.month = mts
         dc.year = yrs
-        return NSCalendar.currentCalendar().dateByAddingComponents(dc, toDate: self, options: nil)
+        return NSCalendar.currentCalendar().dateByAddingComponents(dc, toDate: self, options: nil)!
     }
     
     func midnightUTCDate() -> NSDate {
@@ -82,7 +82,7 @@ extension NSDate {
         dc.nanosecond = 0
         dc.timeZone = NSTimeZone(forSecondsFromGMT: 0)
         
-        return NSCalendar.currentCalendar().dateFromComponents(dc)
+        return NSCalendar.currentCalendar().dateFromComponents(dc)!
     }
     
     class func secondsBetween(date1 d1:NSDate, date2 d2:NSDate) -> Int {
